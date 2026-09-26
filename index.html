@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação Oficial - Vegas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f12;
+            --card-bg: #18181f;
+            --accent-gold: #ffb703;
+            --accent-red: #e63946;
+            --text-light: #f8f9fa;
+            --text-muted: #a0a0ab;
+            --border-color: #2a2a35;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 50px;
+            background: radial-gradient(circle at top, #2b1e07 0%, var(--bg-dark) 70%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Grid dos Dias */
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        /* Card do Dia */
+        .day-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, #1f1f2a 0%, #14141c 100%);
+            padding: 25px;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .day-header h2 {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .day-header h2 span {
+            font-size: 0.9rem;
+            background-color: var(--accent-gold);
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Lista da Programação */
+        .timeline {
+            padding: 20px 25px;
+            list-style: none;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .time {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--accent-gold);
+            min-width: 75px;
+        }
+
+        .event-title {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* Destaques para Happy Hour / Social */
+        .timeline-item.highlight .event-title {
+            color: var(--accent-red);
+            font-weight: 700;
+        }
+
+        .timeline-item.break .event-title {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: #000;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 183, 3, 0.3);
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 183, 3, 0.5);
+            background-color: #ffe066;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .days-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Imersão Vegas</h1>
+            <p>Confira a programação completa e prepare-se para dois dias intensos de negócios, marketing e networking.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="days-grid">
+            
+            <!-- DIA 29 -->
+            <article class="day-card">
+                <div class="day-header">
+                    <h2>Dia 29 <span>Business Day</span></h2>
+                </div>
+                <ul class="timeline">
+                    <li class="timeline-item">
+                        <span class="time">10:00</span>
+                        <span class="event-title">Cadu Neiva</span>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="time">11:15</span>
+                        <span class="event-title">Hot Seat com Elmer Carneiro</span>
+                    </li>
+                    <li class="timeline-item break">
+                        <span class="time">12:30</span>
+                        <span class="event-title">Almoço (AYTY)</span>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="time">14:30</span>
+                        <span class="event-title">Ana Tomazelli</span>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="time">15:30</span>
+                        <span class="event-title">Elen Luna</span>
+                    </li>
+                    <li class="timeline-item break">
+                        <span class="time">18:30</span>
+                        <span class="event-title">Coffee Break</span>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="time">19:15</span>
+                        <span class="event-title">Sandro San</span>
+                    </li>
+                    <li class="timeline-item highlight">
+                        <span class="time">20:30</span>
+                        <span class="event-title">Noite de Poker no Zero Grau ♠️</span>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- DIA 30 -->
+            <article class="day-card">
+                <div class="day-header">
+                    <h2>Dia 30 <span>Marketing Day</span></h2>
+                </div>
+                <ul class="timeline">
+                    <li class="timeline-item">
+                        <span class="time">10:00</span>
+                        <span class="event-title">André Siviero</span>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="time">11:00</span>
+                        <span class="event-title">Thales Frade</span>
+                    </li>
+                    <li class="timeline-item break">
+                        <span class="time">12:00</span>
+                        <span class="event-title">Almoço (São João)</span>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="time">14:30</span>
+                        <span class="event-title">Hot Seat com Elmer Carneiro</span>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="time">15:30</span>
+                        <span class="event-title">Fernando Lima</span>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="time">16:00</span>
+                        <span class="event-title">Lorenzo Sanchez</span>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="time">17:00</span>
+                        <span class="event-title">PITCH CADU</span>
+                    </li>
+                    <li class="timeline-item break">
+                        <span class="time">18:00</span>
+                        <span class="event-title">Coffee</span>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="time">19:00</span>
+                        <span class="event-title">Sabrina Nunes</span>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="time">20:00</span>
+                        <span class="event-title">Emocional + Teaser</span>
+                    </li>
+                    <li class="timeline-item highlight">
+                        <span class="time">21:30</span>
+                        <span class="event-title">OktoberVegas no Locomotiva Pub 🍻</span>
+                    </li>
+                </ul>
+            </article>
+
+        </div>
+
+        <div class="footer-cta">
+            <a href="#" class="btn-cta">Garantir Meu Ingressos</a>
+        </div>
+    </main>
+
+</body>
+</html>
